@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<MasjidManagement.Models.AddMusolliAmount>
+@{
+
+    ViewBag.Title = "Amount";
+}
+
+<table class="table" style="text-align:center;">
+
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Action Item</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var amount in Model)
+        {
+        <tr>
+
+            <td>@amount.Date</td>
+            <td>@amount.Amount</td>
+            <td>
+                <a class="btn btn-primary m-1">Edit</a>
+                <a class="btn btn-danger m-1">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+@section Scripts{
+    <script src="~/Js/CustomScript.js"></script>
+
+}

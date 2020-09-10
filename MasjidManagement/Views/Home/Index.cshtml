@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MasjidManagement.Models.Musolli>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    @{
+        ViewBag.PageTitle = "Musolli Details";
+    }
+
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th style="float:right">Action Item</th>
+            </tr>
+
+        </thead>
+        <tbody>
+
+            @foreach (var musolli in Model)
+            {
+                <tr>
+                    <td>@musolli.Id</td>
+                    <td>@musolli.Name</td>
+                    <td>@musolli.Department</td>
+
+                    <td>
+                        <div style="float:right">
+                            <a asp-controller="amount" asp-action="ViewAmount" asp-route-id="@musolli.Id"
+                               class="btn btn-primary m-1">View</a>
+                            <a asp-controller="home" asp-action="Edit" asp-route-id="@musolli.Id"
+                               class="btn btn-primary m-1">Edit</a>
+                           
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                        
+                            <a asp-controller="amount" asp-action="AddAmount" asp-route-id="@musolli.Id"
+                               class="btn btn-primary m-1" style="width:120px;">AddAmount</a>
+                        </div>
+                    </td>
+
+                </tr>
+                }
+       </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
