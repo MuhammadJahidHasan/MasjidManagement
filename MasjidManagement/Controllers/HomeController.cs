@@ -36,8 +36,6 @@ namespace MasjidManagement.Controllers
         [AllowAnonymous]
         public ViewResult ViewAmount(int id)
         {
-            RetriveID reId = new RetriveID();
-            reId.Id=2;
             var model = _musolliRepo.GetMusolli(id);
             ViewBag.PageTitle = "Amounnt Details";
             return View(model);
@@ -125,9 +123,8 @@ namespace MasjidManagement.Controllers
         [HttpGet]
        public ViewResult EditAmount(int aid)
        {
-            RetriveID reId = new RetriveID();
            
-            Musolli musolli = _musolliRepo.GetMusolli(reId.Id);
+            Musolli musolli = _musolliRepo.GetMusolli(1);
 
             ViewEditAmount viewEditAmount = new ViewEditAmount
            {

@@ -35,7 +35,7 @@ namespace MasjidManagement
 
             services.AddMvc().AddXmlSerializerFormatters();
             services.AddSingleton<IMusolliRepo, MockMusolliRepo>();
-            services.AddSingleton<AddMusolliAmountRepo, AddMusolliAmountRepo>();
+          
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
