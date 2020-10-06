@@ -8,12 +8,10 @@ namespace MasjidManagement.Models
 {
     public class AddMusolliAmount
     {
-        public int Id { get; set; }
         [Required]
         public string Date { get; set; }
         [Required]
         public int Amount { get; set; }
-        public Musolli Musolli { get; set; }
     }
 }
 

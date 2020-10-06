@@ -26,26 +26,25 @@
 
             @foreach (var musolli in Model)
             {
-                <tr>
-                    <td>@musolli.Id</td>
-                    <td>@musolli.Name</td>
-                    <td>@musolli.Department</td>
+            <tr>
+                <td>@musolli.Id</td>
+                <td>@musolli.Name</td>
+                <td>@musolli.Department</td>
+                <td>
+                    <div style="float:right">
+                        <a asp-controller="home" asp-action="ViewAmount" asp-route-id="@musolli.Id"
+                           class="btn btn-primary m-1">View</a>
+                        <a asp-controller="home" asp-action="Edit" asp-route-id="@musolli.Id"
+                           class="btn btn-primary m-1">Edit</a>
 
-                    <td>
-                        <div style="float:right">
-                            <a asp-controller="amount" asp-action="ViewAmount" asp-route-id="@musolli.Id"
-                               class="btn btn-primary m-1">View</a>
-                            <a asp-controller="home" asp-action="Edit" asp-route-id="@musolli.Id"
-                               class="btn btn-primary m-1">Edit</a>
-                           
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                        
-                            <a asp-controller="amount" asp-action="AddAmount" asp-route-id="@musolli.Id"
-                               class="btn btn-primary m-1" style="width:120px;">AddAmount</a>
-                        </div>
-                    </td>
+                        <button type="submit" class="btn btn-danger">Delete</button>
 
-                </tr>
+                        <a asp-controller="home" asp-action="AddAmount" asp-route-id="@musolli.Id"
+                           class="btn btn-primary m-1" style="width:120px;">AddAmount</a>
+                    </div>
+                </td>
+
+            </tr>
                 }
        </tbody>
     </table>

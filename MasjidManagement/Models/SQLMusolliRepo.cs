@@ -27,6 +27,11 @@ namespace MasjidManagement.Models
             return musolli;
         }
 
+        public Musolli AddAmount(AddMusolliAmount addmusolliamount, int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Musolli Delete(int id)
         {
             Musolli musolli = context.Musollies.Find(id);
@@ -55,6 +60,11 @@ namespace MasjidManagement.Models
             musolli.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
             return musolliChanges;
+        }
+
+        public Musolli UpdateAmount(Musolli musolli, int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -15,5 +15,7 @@ namespace MasjidManagement.Models
         //Musolli Update(Musolli employeeChanges);
         Musolli Delete(int id);
         Musolli Update(Musolli musolli);
+        Musolli UpdateAmount(Musolli musolli, int id);
+        Musolli AddAmount(AddMusolliAmount addmusolliamount, int id);
     }
 }

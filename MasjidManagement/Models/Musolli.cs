@@ -8,7 +8,6 @@ namespace MasjidManagement.Models
 {
     public class Musolli
     {
-        
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }

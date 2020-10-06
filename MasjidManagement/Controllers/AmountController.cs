@@ -22,14 +22,6 @@ namespace MasjidManagement.Controllers
             _addMusolliAmountReop = addMusolliAmountRepo;
         }
        
-        [AllowAnonymous]
-        public ViewResult ViewAmount(int id)
-        {
-            index = id;
-            var model = _addMusolliAmountReop.GetAllAmount(id);
-
-            return View(model);
-        }
 
         [HttpGet]
 

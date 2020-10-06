@@ -14,10 +14,39 @@ namespace MasjidManagement.Models
             _musolliList = new List<Musolli>(){
 
 
-                new Musolli() { Id=1,Name="Jahid",Department=Dept.Master_Bari},
-                new Musolli() { Id=2,Name="Sharif",Department=Dept.Master_Bari},
-                new Musolli() { Id=3,Name="Sakib",Department=Dept.Boro_Bari},
-                new Musolli() { Id=4,Name="Ashik",Department=Dept.Akondo_Bari} 
+                 new Musolli() { Id=1,Name="Jahid",Department=Dept.Master_Bari,
+                ListAmount=new List<AddMusolliAmount>(){
+                new AddMusolliAmount(){Date="10 Jan 2020", Amount=200 },
+                new AddMusolliAmount(){Date="15 Aug 2019", Amount=500 }
+
+                }
+
+                 },
+
+
+                new Musolli() { Id=2,Name="Sharif",Department=Dept.Master_Bari,
+                ListAmount=new List<AddMusolliAmount>(){
+                new AddMusolliAmount(){Date="20 Feb 1920", Amount=720 },
+                 new AddMusolliAmount(){Date="22 Mar 1999", Amount=999 }
+                } 
+                
+                },
+
+
+                new Musolli() { Id=3,Name="Sakib",Department=Dept.Boro_Bari,
+                ListAmount=new List<AddMusolliAmount>(){
+                new AddMusolliAmount(){Date="20 Apr 2012", Amount=720 },
+                 new AddMusolliAmount(){Date="22 May 2010", Amount=999 }
+                }
+
+                },
+                new Musolli() { Id=2,Name="Sharif",Department=Dept.Master_Bari,
+                ListAmount=new List<AddMusolliAmount>(){
+                new AddMusolliAmount(){Date="20 Jun 2015", Amount=720 },
+                 new AddMusolliAmount(){Date="22 Sep 2018", Amount=999 }
+                }
+
+                }
             };
         }
 
@@ -28,6 +57,13 @@ namespace MasjidManagement.Models
             else
                 musolli.Id = 1;
             _musolliList.Add(musolli);
+            return musolli;
+        }
+
+        public Musolli AddAmount(AddMusolliAmount addmusolliamount, int id)
+        {
+            Musolli musolli = _musolliList.FirstOrDefault(e => e.Id == id);
+            musolli.ListAmount.Add(addmusolliamount);
             return musolli;
         }
 
@@ -49,6 +85,7 @@ namespace MasjidManagement.Models
             return _musolliList;
         }
 
+       
         public Musolli GetMusolli(int id)
         {
             return _musolliList.FirstOrDefault(e => e.Id == id);
@@ -66,5 +103,19 @@ namespace MasjidManagement.Models
             }
             return musolli;
         }
+
+        public Musolli UpdateAmount(Musolli employeeChanges, int id)
+        {
+            Musolli musolli = _musolliList.FirstOrDefault(e => e.Id == employeeChanges.Id);
+
+            if (musolli != null)
+            {
+                musolli.ListAmount[id].Date = employeeChanges.ListAmount[id].Date;
+                musolli.ListAmount[id].Amount = employeeChanges.ListAmount[id].Amount;
+            }
+            return musolli;
+        }
+
+
     }
 }
